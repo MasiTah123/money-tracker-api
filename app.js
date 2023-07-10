@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
 })
 
 const PORT = process.env.PORT || 8000
-app.listen(PORT, () => {
+const HOST = process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0'
+app.listen(PORT, HOST, () => {
     console.log("Server is up and listening on " + PORT)
 })
